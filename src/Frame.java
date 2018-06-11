@@ -7,12 +7,11 @@ import java.awt.event.MouseEvent;
 
 public class Frame extends JFrame {
     private JButton jbt = new JButton("START");
+    private JButton jbt2 = new JButton("RESET");
     private JButton jbt1 = new JButton("EXIT");
-    private JLabel jlb = new JLabel("說明");
     private JLabel jb1 = new JLabel( );
-    private JTextArea jta = new JTextArea();
-    private JPanel jpn = new JPanel(new GridLayout(2,1,3,3));
-    private JPanel jpn1 = new JPanel(new GridLayout(2,1,3,3));
+    private JLabel jlb = new JLabel( "使用者");
+    private JPanel jpn = new JPanel(new GridLayout(3,1,3,3));
     private JPanel jpn2 = new JPanel(new GridLayout(2,1,3,3));
     private ImageIcon img1 = new ImageIcon("下載.jpg");
     private Timer t1;
@@ -29,13 +28,14 @@ public class Frame extends JFrame {
         jb1.setBounds(100,200,40,40);
         jb1.setIcon(img1);
         jpn.add(jbt);
+        jpn.add(jbt2);
         jpn.add(jbt1);
-        jpn1.add(jlb);
-        jpn1.add(jta);
+        jpn2.add(jlb);
         jpn2.add(jb1);
         cp.add(jpn,BorderLayout.WEST);
-        cp.add(jpn1,BorderLayout.EAST);
         cp.add(jpn2,BorderLayout.CENTER);
+        jpn.setPreferredSize(new Dimension(200,800));
+        jpn2.setPreferredSize(new Dimension(300,800));
 
         t1 = new Timer(100, new AbstractAction() {
             @Override
@@ -57,6 +57,13 @@ public class Frame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
+            }
+        });
+        jbt2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                count = 0;
+                Frame.this.setTitle(Integer.toString(count));
             }
         });
     }
