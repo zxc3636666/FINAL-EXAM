@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Frame frm = new Frame();
+        MAINFRAME frm = new MAINFRAME();
 //       frm.setSize(400,500);
         frm.setVisible(true);
 //       frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
