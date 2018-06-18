@@ -48,9 +48,9 @@ public class MAINFRAME extends JFrame {
 
     private JButton jbtnEXIT = new JButton("EXIT");
 
-    private ImageIcon icon1 = new ImageIcon("C:\\Users\\User\\Documents\\GitHub\\20180603\\1.png");
+    private ImageIcon icon1 = new ImageIcon("1.png");
 
-    private ImageIcon icon2 = new ImageIcon("C:\\Users\\User\\Documents\\GitHub\\20180603\\2.png");
+    private ImageIcon icon2 = new ImageIcon("2.png");
 
 
 
@@ -176,7 +176,7 @@ public class MAINFRAME extends JFrame {
 
                 JOptionPane.showMessageDialog(null,"遊戲開始");
 
-                MAINFRAME2 frm = new MAINFRAME2();
+                MAINFRAME2 frm = new MAINFRAME2(jlf.getText());
 
                 frm.setVisible(true);
 
